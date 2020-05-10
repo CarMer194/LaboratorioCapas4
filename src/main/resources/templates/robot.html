@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymealeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Seguridad</title>
+<style>
+	body{
+		background-color:#FA9A52;
+	}
+	h1{
+		color:#7A4C28;
+	}
+	label{
+		color:#7A4C28;
+	}
+	span{
+		color:#FF0000;
+	}
+</style>
+</head>
+<body>
+	<div align="center">
+	<form th:action="@{/seguridad}" th:object="${robot}" method="post">
+		<label>Marcar solo si usted es un robot</label>
+	
+		<input type="radio" th:field="*{soyRobot}" th:value="${false}">
+		<span th:errors="*{soyRobot}" style="color:#FF0000" ></span><br>
+		
+		<input type="submit" value="Aceptar">
+	</form>
+	<a href="/producto">Regresar</a>
+	</div>
+</body>
+</html>

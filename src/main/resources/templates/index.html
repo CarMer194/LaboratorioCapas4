@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymealeaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+	body{
+		background-color:#FA9A52;
+	}
+	h1{
+		color:#7A4C28;
+	}
+	label{
+		color:#7A4C28;
+	}
+	span{
+		color:#FF0000;
+	}
+
+</style>
+</head>
+
+
+<body>
+<div align="center">
+<h1>Ingresar Producto</h1>
+<form th:action="@{/formProducto}" th:object="${producto}" method="post">
+	<label>Nombre Del Producto </label><input type="text" th:field="${producto.nombre}"><br>
+	<span th:errors="*{nombre}"></span><br>
+	
+	<label>Descripcion del producto </label><input type="text" th:field="${producto.descripcion}"><br>
+	<span th:errors="*{descripcion}"></span><br>
+	
+	<label>Precio Del Producto </label><input type="text" th:field="${producto.precio}"><br>
+	<span th:errors="*{precio}" ></span><br>
+	
+	<label>Fecha de Vencimiento </label><input type="text" th:field="${producto.vencimiento}"><br>
+	<span th:errors="*{vencimiento}"></span><br>
+	
+	<input type="submit" value="Agregar Producto">
+</form>
+</div>
+</body>
+</html>
